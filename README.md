@@ -74,6 +74,7 @@ Then send one small real task (about a 20-minute job). Open the thread when it f
 | File | What it's for |
 |---|---|
 | `AGENTS.md` | The brief every thread reads first. The one file you fill in. |
+| `REVIEW.md` | What the reviewer thread checks: what failure looks like, severity, what to skip, the evidence bar, a three-round cap. |
 | `SETUP.md` | The script Claude follows when you paste this repo's link and ask it to set you up. |
 | `CLAUDE.md` | Points Claude Code at `AGENTS.md`. |
 | `examples/` | Eight filled briefs, one per business goal. Copy the closest one over `AGENTS.md`. |

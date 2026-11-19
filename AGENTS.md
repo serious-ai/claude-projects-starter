@@ -30,7 +30,9 @@ List the exact checks, and the evidence each thread pastes back. You're several 
 
 - Before calling anything done, [run `python3 scripts/check_brief.py` and any tests in the repo] and paste the command and its output into the pull request.
 - Every number, claim or quote carries its source (file name and section, or a URL and the date read) in the same line.
-- A second thread reviews every pull request, and the reviewer never reviews its own work.
+- A second thread reviews every pull request, following `REVIEW.md`, and the reviewer never reviews its own work. One reviewer per pull request.
+- Findings are Important (blocks the merge), Nit (minor, never blocks) or Pre-existing (a real problem this change didn't introduce).
+- After three review-and-fix rounds, the reviewer stops and asks me instead of starting a fourth.
 - A claim with no pasted evidence counts as unchecked.
 
 ## When something is missing

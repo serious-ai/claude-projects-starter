@@ -69,7 +69,15 @@ Swap the grep for your own linter (Vale, a test suite, a script) once it works.
 - **Setup script.** A cloud environment can run a setup script before each thread starts (install tools, write a user-level `CLAUDE.md`). Use it in place of SessionStart hooks.
 - **Hardware.** Cloud threads use none of your computer's memory beyond the window showing them. Each local agent uses roughly 0.3 to 0.8 GB.
 
-## 7. Data
+## 7. Review that keeps up
+
+- One reviewer thread per pull request, with every lens inside it. Several review bots give conflicting advice and fix each other's fixes.
+- Cap review-and-fix loops at three rounds. Anthropic's code review team saw one pull request run more than fifty rounds overnight before they added the cap.
+- Put review-only rules in `REVIEW.md` (what failure looks like, severity, what to skip, the evidence bar) and project context in `AGENTS.md`.
+- Decide how much human review each kind of change needs. Anthropic's tiers: docs and copy need no person once automated and security review pass, ordinary changes need one, the highest-risk code needs two. Write it down, start strict, and loosen it when you have evidence.
+- Review answers "is it correct as written?" Whether to build it at all stays with you.
+
+## 8. Data
 
 - Projects runs on consumer plans (Pro, Max, Ultra). Anthropic's BAA doesn't cover cloud sessions or Remote Control, so keep patient health information and client-identifiable data out of every project thread.
 - Every connector on your Claude account reaches every thread. Switch off the ones a thread shouldn't touch before you start.
