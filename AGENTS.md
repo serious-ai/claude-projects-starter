@@ -1,6 +1,6 @@
 # [Project name] brief
 
-Every thread in this project reads this file first. Replace each line in [brackets] with your own, delete the lines that don't fit, and keep every line specific enough that someone could check it. Write "run the tests and paste the summary," never "test your changes." The five headings below stay (the brief check looks for them), and the whole file stays under 16,000 characters.
+Every thread in this project reads this file first. Replace each line in [brackets] with your own, delete the lines that don't fit, and keep every line specific enough that someone could check it. Write "run the tests and paste the summary," never "test your changes." The five headings below stay (the brief check looks for them), and the whole file stays under 16,000 characters. `docs/project-guardrails.md` explains the lines marked as guardrails.
 
 Owner: [your name]. Last updated: [November 20, 2026].
 
@@ -20,6 +20,8 @@ Name every repo, folder or file the work touches, and what one thread owns.
 - Work lives in [this repo, `drafts/` for output, `reference/` for source material].
 - One thread per [RFP], named `[rfp-name]`, each on its own branch with its own pull request.
 - Run at most [two] threads at a time unless I say otherwise.
+- Where each thread runs: [research threads] in the cloud, [anything that drafts what a person will receive] on my computer, because [our voice and safety checks run there as hooks].
+- Network: [Full, because threads read ordinary websites | Limited, plus these domains]. Public data only is a rule in this file either way.
 - Read-only sources: [`reference/past-wins/`, the uploaded pricing sheet]. Never edit them.
 
 ## How a thread checks its own work
@@ -51,11 +53,12 @@ List what stays with you: sends, merges, money, anything a customer sees.
 
 ## Guardrails
 
-These hold on every run. Hooks and local permission rules don't travel to cloud threads, so the hard ones are also set outside Claude (branch protection, connectors switched off, secrets left out).
+These hold on every run. Hooks and local permission rules don't run in cloud threads, even when committed to the repo, so each hard rule is also a GitHub check on every pull request or is set outside Claude (branch protection, connectors switched off, secrets left out).
 
 - Drafts only. No send, post or publish tools, even when a connected account offers them.
 - No patient health information (PHI), client records or client-identifiable data in any cloud thread. Use public data, our own material, or synthetic samples labeled "Sample data."
 - Every pull request follows `.github/pull_request_template.md`: what changed, the evidence (commands run and their output), what was deleted, and the decisions waiting on me.
 - The reviewer thread never reviews its own work, and a pull request waits until a separate reviewer says it's ready.
 - No secrets, passwords or API keys in the repo or in a thread's messages.
+- Local threads start without project memory. Anything a local thread must know lives in this file or the repo's root `CLAUDE.md`. Once a week the coordinator proposes moving what it saved to memory into this file, and I approve it.
 - Prefer deleting over adding. Each pull request names what it removed.

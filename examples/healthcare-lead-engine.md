@@ -23,7 +23,7 @@ Example brief, adapted from a real project that went live November 16, 2026. Swa
 - Practice profiles: one file per group in `profiles/`, with service mix from public Medicare data against same-specialty peers, payers listed on the site, open billing or coding roles (2025 and 2026 posts only) and the practice administrator. Every field carries its source URL and the date read.
 - Reads and drafts: one file per practice in `drafts/[week]/`, a one-screen read plus a first email under 90 words.
 - Each thread on its own branch with its own draft pull request.
-- Network access: Limited, allowed domains only the public data hosts (data.cms.gov, cms.gov, ahrq.gov, the NPI registry).
+- Network access: Full, because profiles read practice websites, which Limited blocks. Public data only is a rule in this brief, not a network setting.
 
 ## How a thread checks its own work
 
@@ -53,4 +53,5 @@ Example brief, adapted from a real project that went live November 16, 2026. Swa
 - Every claim about a practice rests on a dated 2025 or 2026 source, cited inline. Payer or vendor statistics carry their source in the same sentence.
 - One personal read per practice, sent only to the person it was made for.
 - Each pull request lists what was added, what was deleted, and what the owner needs to decide.
-- Coordinator on a lower effort setting, threads on high. At most two threads per task.
+- Threads on Opus at high effort. At most [three] threads at a time, a preference the owner checks against plan usage.
+- Local threads start without project memory, so anything the drafting thread must know lives in this brief.

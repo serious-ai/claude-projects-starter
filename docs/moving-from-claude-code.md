@@ -11,7 +11,7 @@ If you already run Claude Code on your laptop, most of your setup carries into a
 
 ## What it leaves behind
 
-- Hooks. Any check you run as a hook (a linter on drafts, a block on certain commands) won't fire.
+- Hooks, including hooks committed to the repo's `.claude/settings.json`. They run in a regular cloud session but not in project threads. Any check you run as a hook (a linter on drafts, a block on certain commands) won't fire.
 - Permission rules and `settings.json`, including environment variables set there.
 - Repo skills and `.mcp.json` servers.
 - `CLAUDE.md` files in subfolders.
@@ -25,11 +25,11 @@ A thread that runs on your own computer through Remote Control gets the project 
 | applies to every thread from the start | `AGENTS.md`, pasted as the project instructions |
 | was learned along the way | project memory: correct the thread once, then say "remember this, because..." |
 | is about one repo only | that repo's root `CLAUDE.md`, kept under about 200 lines |
-| must hold no matter what | outside Claude: branch protection, connectors switched off, secrets left out of the environment |
+| must hold no matter what | a GitHub check required before merge, or outside Claude: branch protection, connectors switched off, secrets left out of the environment |
 
 ## A short checklist
 
-1. List your hooks and permission rules. For each one, decide whether it becomes a line in `AGENTS.md`, a setting outside Claude, or a reason to keep that work local.
+1. List your hooks and permission rules. For each one: say it in `AGENTS.md`, check it with a GitHub check on every pull request, and if it must block something as it happens, keep that step local. `docs/project-guardrails.md` has an example check.
 2. Move any rule from a subfolder `CLAUDE.md` into the root one or into `AGENTS.md`.
 3. Turn off every account connector a thread shouldn't touch before you create the project.
 4. Keep anything that sends, posts or touches a client inbox on your own machine, where your hooks still run.

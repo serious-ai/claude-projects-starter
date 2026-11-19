@@ -17,9 +17,10 @@ Go down the table. The first yes decides.
 | If the work... | Use |
 |---|---|
 | fits in one conversation | a regular chat or session |
-| needs your own computer for every step | stay local |
 | is one job on a schedule, no back and forth | a scheduled task |
 | is a goal that keeps producing tasks | a project |
+
+Cloud or laptop doesn't decide it. A project's threads can run in the cloud, on your own computer, or a mix.
 
 ## Pick your path
 
@@ -44,13 +45,13 @@ The included check (`scripts/check_brief.py`) runs on every push and fails if `A
 
 ### Path 3: Already on Claude Code
 
-Your setup carries over in part. Cloud threads load the repo's root `CLAUDE.md`, `.claude/CLAUDE.md` and `.claude/rules/`. They leave behind hooks, permission rules, repo skills, `.mcp.json` servers, settings and subfolder `CLAUDE.md` files.
+Your setup carries over in part. Cloud threads load the repo's root `CLAUDE.md`, `.claude/CLAUDE.md` and `.claude/rules/`. They leave behind hooks (even ones committed to the repo), permission rules, repo skills, `.mcp.json` servers, settings and subfolder `CLAUDE.md` files. Local threads keep your hooks but start without the project memory.
 
 - Move every rule that must hold into `AGENTS.md` (this repo's `CLAUDE.md` just points there).
-- Enforce the hard rules outside Claude: branch protection, connectors switched off, secrets left out of the environment.
+- Turn each hook into a GitHub check on every pull request, or run that step as a local thread. Enforce the rest outside Claude: branch protection, connectors switched off, secrets left out of the environment.
 - Use `/send-to-project` to move a running local session into a project.
 
-Details in `docs/moving-from-claude-code.md`.
+Details in `docs/moving-from-claude-code.md`, and the full checklist of guardrails that hold in `docs/project-guardrails.md`.
 
 ## The first message to send
 
@@ -67,7 +68,7 @@ Then send one small real task (about a 20-minute job). Open the thread when it f
 | `AGENTS.md` | The brief every thread reads first. The one file you fill in. |
 | `CLAUDE.md` | Points Claude Code at `AGENTS.md`. |
 | `examples/` | Eight filled briefs, one per business goal. Copy the closest one over `AGENTS.md`. |
-| `docs/` | Moving from Claude Code, and starting with documents only. |
+| `docs/` | Guardrails that hold in a project, moving from Claude Code, and starting with documents only. |
 | `.github/pull_request_template.md` | What every thread's change has to show: evidence, deletions, decisions for you. |
 | `scripts/check_brief.py` | Holds the brief's shape. Run `python3 scripts/check_brief.py` or pass a path. |
 
