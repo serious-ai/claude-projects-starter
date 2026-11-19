@@ -4,6 +4,14 @@ A one-file starting point for your first Claude Project. Fill in `AGENTS.md`, co
 
 Built for the UCL Live lunch and learn on Claude's Projects beta, Friday, November 20, 2026, in Austin.
 
+## Fastest start: paste one line into Claude Code
+
+Open Claude Code (the desktop app's Code tab, the terminal, or claude.ai/code) and paste:
+
+> Set me up with a Claude Project using https://github.com/serious-ai/claude-projects-starter. Follow its SETUP.md.
+
+Claude asks you the five questions one at a time, writes your brief, makes a private copy of this repo in your GitHub if you want one, and tells you exactly what to paste into Projects. `SETUP.md` is the script it follows. The paths below do the same thing by hand.
+
 ## What Projects is
 
 Projects is a feature of Claude Code (web, desktop and phone apps, left sidebar) where you talk to one main conversation, the coordinator, and give it a goal. The coordinator starts workers, called threads, for each piece of the work, runs them side by side, and tells you what's ready for your review. Every thread starts from the same project instructions, up to 16,000 characters, and that is what `AGENTS.md` in this repo holds.
@@ -66,6 +74,7 @@ Then send one small real task (about a 20-minute job). Open the thread when it f
 | File | What it's for |
 |---|---|
 | `AGENTS.md` | The brief every thread reads first. The one file you fill in. |
+| `SETUP.md` | The script Claude follows when you paste this repo's link and ask it to set you up. |
 | `CLAUDE.md` | Points Claude Code at `AGENTS.md`. |
 | `examples/` | Eight filled briefs, one per business goal. Copy the closest one over `AGENTS.md`. |
 | `docs/` | Guardrails that hold in a project, moving from Claude Code, and starting with documents only. |
