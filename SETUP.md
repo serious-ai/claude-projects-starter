@@ -18,6 +18,7 @@ Done when all six have an answer you could turn into a checkable line.
 ## 2. Write their AGENTS.md
 
 - Start from `AGENTS.md` in this repo (or the example they picked). Keep the five `##` question headings and the Guardrails section. Replace every bracket with their answers and delete lines that don't fit.
+- If their copy of the starter has a filled-in `DEFAULTS.md`, merge each line into the matching section, and put any line that doesn't fit this project in front of them as a question.
 - Copy `REVIEW.md` alongside it and fill in one sentence on what failure looks like for them.
 - Every line should be checkable: "run the tests and paste the summary," never "test your changes."
 - Stay under 16,000 characters. Run `python3 scripts/check_brief.py <path>` if you can, or check the five headings and the length yourself.
