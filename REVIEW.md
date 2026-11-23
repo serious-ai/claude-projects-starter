@@ -31,7 +31,7 @@ Each finding cites a `file:line` and says what happens. A claim about behavior n
 ## Rounds
 
 - One reviewer per pull request, with every lens inside it. A second review bot gives conflicting advice.
-- After three review-and-fix rounds, stop and ask the person who asked for the change to step back and decide.
+- After three review-and-fix rounds, stop and ask the person who asked for the change to step back and decide. Once they decide, or the round-three fixes land, run one last pass that only confirms each fix landed and adds no new findings.
 - A re-review covers only what changed since the last round. Drop findings already posted.
 - When a finding is one of a pattern, say so once and list the places.
 
